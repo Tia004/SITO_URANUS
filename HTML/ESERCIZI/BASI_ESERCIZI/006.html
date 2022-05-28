@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../style/style.css">
+    <link rel="stylesheet" href="../../../font-awesome-4.7.0/css/font-awesome.css">
+    <title>006</title>
+</head>
+<body>
+    <div class="headeres">
+        <div class="titolo">Esercizio 6 | Basi</div>
+        <div class="descrizione">Inserire dei numeri a piacere (0 to esc). <br/>Visualizzare il primo max e il secondo max</div>
+    </div>
+    <div class="codice">
+<pre>
+#include &lt;stdio.h>
+
+int main()
+{
+	int n, max, min, enter;
+	size_t i;
+		
+	printf("\nQuanti numeri vuoi inserire: ");
+	scanf("%d", &enter);
+		
+	for (i = 1; i <= enter; i++)
+	{
+		printf("\n Numero: ");
+		scanf("%d", &n);
+		
+		if (n >= max)
+			max = n;
+		else
+			if (n <= min)
+				min = n;
+	}
+		
+	printf("\nMAX: %d", max);
+	printf("\nMIN: %d", min);
+	return 0;
+}
+</pre></div>
+<a href="ESERCIZI_C/006.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
+</body>
+</html>
