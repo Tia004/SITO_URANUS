@@ -84,6 +84,8 @@ body {
 
 .menu ul li a span {
   z-index: 4;
+  -webkit-transition: .5s;
+  transition: .5s;
 }
 
 .menu ul li .activemenu span {
@@ -401,8 +403,8 @@ body {
   height: 80px;
   border-radius: 50px;
   z-index: 2;
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: .4s;
+  transition: .4s;
   color: #111;
   font-size: 1.2em;
   display: -webkit-box;
@@ -422,8 +424,8 @@ body {
   background: #f1edea;
   -webkit-box-shadow: 20px 20px 60px #c8c4c1, -20px -20px 40px #e4e2e0;
           box-shadow: 20px 20px 60px #c8c4c1, -20px -20px 40px #e4e2e0;
-  -webkit-animation: scala .6s linear normal;
-          animation: scala .6s linear normal;
+  -webkit-animation: scala .5s linear normal;
+          animation: scala .5s linear normal;
 }
 
 .menuesercizi ul li .sfondobottone:hover {
