@@ -337,7 +337,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   overflow: hidden;
-  overflow: scroll;
+  overflow-y: scroll;
   z-index: 5;
 }
 
@@ -475,24 +475,15 @@ body {
 .headeres {
   position: fixed;
   width: 100%;
+  height: 200px;
   background: #f1edea;
   z-index: 3;
   -webkit-box-shadow: 0 20px 20px #f1edea, 0 20px 30px #f1edea;
           box-shadow: 0 20px 20px #f1edea, 0 20px 30px #f1edea;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 .titolo {
   position: fixed;
-  top: 20px;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -516,10 +507,14 @@ body {
 }
 
 .descrizione {
-  position: relative;
+  position: fixed;
+  left: 50%;
   top: 100px;
-  width: 700px;
-  text-align: justify;
+  height: 100px;
+  overflow: scroll;
+  border-bottom: 2px dashed #111;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   z-index: 3;
 }
 
