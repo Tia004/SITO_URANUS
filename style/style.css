@@ -568,4 +568,21 @@ body {
   -webkit-box-shadow: 0 20px 30px #00000040;
           box-shadow: 0 20px 30px #00000040;
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: none;
+  border-radius: 120px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #111;
+  border-radius: 120px;
+}
 /*# sourceMappingURL=style.css.map */
