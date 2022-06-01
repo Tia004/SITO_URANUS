@@ -15,4 +15,5 @@ int main(){
     area = base * altezza;
 
     printf("\nL'area vale: %d\n\n", area);
+    return 0;
 }
