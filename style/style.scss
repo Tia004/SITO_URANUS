@@ -382,8 +382,7 @@ body {
     left: 50%;
     top: 100px;
     height: 100px;
-    overflow: scroll;
-    border-bottom: 2px dashed #111;
+    overflow-y: scroll;
     transform: translateX(-50%);
     z-index: 3;
 }
@@ -444,4 +443,9 @@ body {
   ::-webkit-scrollbar-thumb {
     background: #111;
     border-radius: 120px;
+  }
+
+  * {
+    scrollbar-width: 10px;
+    scrollbar-color: #111 #ffffff00;
   }
