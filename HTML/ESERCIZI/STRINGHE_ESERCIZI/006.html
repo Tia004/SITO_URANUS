@@ -6,17 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../style/style.css">
     <link rel="stylesheet" href="../../../font-awesome-4.7.0/css/font-awesome.css">
-    <title>001</title>
+    <title>037</title>
 </head>
 <body>
     <div class="headeres">
         <div class="titolo">Esercizio 6 | Stringhe</div>
-        <div class="descrizione">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quidem omnis eius libero vero deleniti! Maiores porro quo voluptates, repellat nemo consequatur libero voluptas odit quisquam dicta placeat at nisi?</div>
+        <div class="descrizione">Emulare la funzione strcpy char by char</div>
     </div>
     <div class="codice">
 <pre>
-placeholder
+#include <stdio.h>
+#define DIM 80
+
+void my_strcpy(char [],char []);
+
+int main(){
+	char s1[DIM],s2[DIM];
+	printf("Stringa 1: ");
+	gets(s1);
+	fflush(stdin);
+	my_strcpy(s2,s1);
+	printf("Stringa 2: ");
+	puts(s2);
+	return 0;
+}
+
+void my_strcpy(char s2[DIM],char s1[DIM]){
+	int i;
+	for(i=0;i<sizeof(s1)-1;i++){
+		s2[i]=s1[i];
+	}
+	s2[i]='\0';
+}
 </pre></div>
-<a href="ESERCIZI_C/006.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
+<a href="ESERCIZI_C/037.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
 </body>
 </html>
