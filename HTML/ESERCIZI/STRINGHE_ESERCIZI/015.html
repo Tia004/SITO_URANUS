@@ -6,17 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../style/style.css">
     <link rel="stylesheet" href="../../../font-awesome-4.7.0/css/font-awesome.css">
-    <title>001</title>
+    <title>049</title>
 </head>
 <body>
     <div class="headeres">
         <div class="titolo">Esercizio 15 | Stringhe</div>
-        <div class="descrizione">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quidem omnis eius libero vero deleniti! Maiores porro quo voluptates, repellat nemo consequatur libero voluptas odit quisquam dicta placeat at nisi?</div>
+        <div class="descrizione">Dato un array s dimensionato DIM di stringhe dimensionate L, scrivere una funzione int confronta(char [][L]) che ritorna il numero di stringhe uguali</div>
     </div>
     <div class="codice">
 <pre>
-placeholder
+#include <stdio.h>
+#include <string.h>
+#define DIM 5
+#define L 80
+
+int confronta(char s[DIM][L]);
+
+int main(){
+	char s[DIM][L];
+	int i;
+	for(i=0;i<DIM;i++){
+		printf("%d^ stringa: ",i+1);
+		gets(s[i]);
+		fflush(stdin);
+	}
+	printf("\n\nNumero stringhe uguali: %d",confronta(s));
+	return 0;
+}
+
+int confronta(char s[DIM][L]){
+	int i,c,n=0;
+	for(i=0;i<DIM;i++){
+		for(c=0;c<i;c++){
+			if(strcmp(s[i],s[c])==0){
+				n++;
+			}
+		}
+	}
+	return n;
+}
 </pre></div>
-<a href="ESERCIZI_C/015.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
+<a href="ESERCIZI_C/049.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
 </body>
 </html>
