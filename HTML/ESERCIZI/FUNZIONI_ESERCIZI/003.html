@@ -6,17 +6,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../style/style.css">
     <link rel="stylesheet" href="../../../font-awesome-4.7.0/css/font-awesome.css">
-    <title>001</title>
+    <title>045</title>
 </head>
 <body>
     <div class="headeres">
         <div class="titolo">Esercizio 3 | Funzioni</div>
-        <div class="descrizione">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quidem omnis eius libero vero deleniti! Maiores porro quo voluptates, repellat nemo consequatur libero voluptas odit quisquam dicta placeat at nisi?</div>
+        <div class="descrizione">Progettare e realizzare una funzione che effettui il controllo di validità (data entry) della data immessa nella forma gg/mm/aaaa</div>
     </div>
     <div class="codice">
 <pre>
-placeholder
+#include <stdio.h>
+
+int ValidData(int,int,int);
+
+int main(){
+	int gg,mm,aa;
+	printf("\t\tINSERIMENTO DATA (gg/mm/aa)");
+	printf("\n\nGiorno: ");
+	scanf("%d",&gg);
+	fflush(stdin);
+	printf("Mese: ");
+	scanf("%d",&mm);
+	fflush(stdin);
+	printf("Anno: ");
+	scanf("%d",&aa);
+	fflush(stdin);
+	if(ValidData(gg,mm,aa)==0){
+		printf("\n\t\tDATA NON VALIDA");
+	}else{
+		printf("\n\t\tDATA  VALIDA");
+	}
+	return 0;
+}
+
+int ValidData(int gg,int mm,int aa){
+	if(mm>0 && mm<=12){
+		if(mm==4 || mm==6 || mm==9){
+			if(gg>=1 && gg<=30){
+				return 1;
+			}else{
+				return 0;
+			}
+		}else if(mm==2){
+			if(aa%4==0){
+				if(aa%100==0){
+					if(aa%400==0){
+						if(gg>=1 && gg<=29){
+							return 1;
+						}else{
+							return 0;
+						}
+					}
+				}
+			}else{
+				if(gg>=1 && gg<=29){
+					return 1;
+				}else{
+					return 0;
+				}
+			}
+		}else{
+			if(gg>=1 && gg<=31){
+				return 1;
+			}else{
+				return 0;
+			}
+		}
+	}else{
+		return 0;
+	}
+}
 </pre></div>
-<a href="ESERCIZI_C/003.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
+<a href="ESERCIZI_C/045.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
 </body>
 </html>
