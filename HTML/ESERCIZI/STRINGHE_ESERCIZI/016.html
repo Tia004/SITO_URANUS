@@ -6,17 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../style/style.css">
     <link rel="stylesheet" href="../../../font-awesome-4.7.0/css/font-awesome.css">
-    <title>001</title>
+    <title>054</title>
 </head>
 <body>
     <div class="headeres">
         <div class="titolo">Esercizio 16 | Stringhe</div>
-        <div class="descrizione">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quidem omnis eius libero vero deleniti! Maiores porro quo voluptates, repellat nemo consequatur libero voluptas odit quisquam dicta placeat at nisi?</div>
+        <div class="descrizione">Data una stringa s caricata contestualmente (contenente solo lettere e spazi per ipotesi). Eliminare gli spazi e caricare in una seconda stringa s2. Convertire s2 tutto in minuscole. Ordinare s2 in modo crescente. Visualizzare s2</div>
     </div>
     <div class="codice">
 <pre>
-placeholder
+#include <stdio.h>
+#include <string.h>
+#define DIM 80
+typedef char string;
+
+void sorting(string []);
+
+int main(){
+	string s1[DIM],s2[DIM];
+	int i,j=0;
+	printf("Stringa: ");
+	gets(s1);
+	fflush(stdin);
+	for(i=0;i<strlen(s1);i++){
+        if(s1[i]!=' '){
+            s2[j]=s1[i];
+            j++;
+        }
+	}
+	printf("\nSenza spazi: ");
+	puts(s2);
+	for(i=0;i<strlen(s2);i++){
+        if(s2[i]>=65 && s2[i]<=90){
+        	s2[i]+=32;
+		}
+	}
+	printf("\nMinuscolo: ");
+	puts(s2);
+	sorting(s2);
+	printf("\nOrdinato: ");
+	puts(s2);
+	return 0;
+}
+
+void sorting(string s[]){
+    int i,j,temp;
+    for(i=0; i<strlen(s); i++){
+        for(j=i+1; j<strlen(s); j++){
+            if(s[i]>s[j]){
+                temp=s[j];
+                s[j]=s[i];
+                s[i]=temp;
+            }
+        }
+    }
+}
 </pre></div>
-<a href="ESERCIZI_C/016.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
+<a href="ESERCIZI_C/054.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
 </body>
 </html>
