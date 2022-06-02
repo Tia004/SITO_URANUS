@@ -6,17 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../style/style.css">
     <link rel="stylesheet" href="../../../font-awesome-4.7.0/css/font-awesome.css">
-    <title>001</title>
+    <title>029</title>
 </head>
 <body>
     <div class="headeres">
         <div class="titolo">Esercizio 3 | Stringhe</div>
-        <div class="descrizione">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quidem omnis eius libero vero deleniti! Maiores porro quo voluptates, repellat nemo consequatur libero voluptas odit quisquam dicta placeat at nisi?</div>
+        <div class="descrizione">Emulare la funzione: strcat(s1, s2)  - Concatena s2 dopo s1. Visualizzare le 2 stringhe</div>
     </div>
     <div class="codice">
 <pre>
-placeholder
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+	int i;
+	char s1[]="marco";
+	char s2[strlen(s1)];
+	for(i=0;i<strlen(s1);i++){
+		s2[i]=s1[strlen(s1)-1-i];
+	}
+	puts(s1);
+	puts(s2);
+	return 0;
+}
 </pre></div>
-<a href="ESERCIZI_C/003.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
+<a href="ESERCIZI_C/029.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
 </body>
 </html>
