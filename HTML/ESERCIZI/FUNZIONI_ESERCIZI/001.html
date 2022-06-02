@@ -6,17 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../style/style.css">
     <link rel="stylesheet" href="../../../font-awesome-4.7.0/css/font-awesome.css">
-    <title>001</title>
+    <title>035</title>
 </head>
 <body>
     <div class="headeres">
         <div class="titolo">Esercizio 1 | Funzioni</div>
-        <div class="descrizione">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quidem omnis eius libero vero deleniti! Maiores porro quo voluptates, repellat nemo consequatur libero voluptas odit quisquam dicta placeat at nisi?</div>
+        <div class="descrizione">Scrivere una funzione che calcoli una qualunque potenza maggiore o uguale a zero: long int potenza(int , int);</div>
     </div>
     <div class="codice">
 <pre>
-placeholder
+#include <stdio.h>
+
+long int potenza();
+
+int main(){
+	int n1,n2;
+	long int p;
+	printf("n1: ");
+	scanf("%d",&n1);
+	fflush(stdin);
+	printf("n2: ");
+	scanf("%d",&n2);
+	fflush(stdin);
+	p=potenza(n1,n2);
+	printf("%d^%d = %li",n1,n2,p);
+	return 0;
+}
+
+long int potenza(int n1,int n2){
+	int i,p=1;
+	for(i=1;i<=n2;i++){
+		p=p*n1;
+	}
+	return p;
+}
 </pre></div>
-<a href="ESERCIZI_C/001.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
+<a href="ESERCIZI_C/035.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
 </body>
 </html>
