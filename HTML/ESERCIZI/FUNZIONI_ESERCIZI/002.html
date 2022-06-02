@@ -6,17 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../style/style.css">
     <link rel="stylesheet" href="../../../font-awesome-4.7.0/css/font-awesome.css">
-    <title>001</title>
+    <title>036</title>
 </head>
 <body>
     <div class="headeres">
         <div class="titolo">Esercizio 2 | Funzioni</div>
-        <div class="descrizione">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quidem omnis eius libero vero deleniti! Maiores porro quo voluptates, repellat nemo consequatur libero voluptas odit quisquam dicta placeat at nisi?</div>
+        <div class="descrizione">Scrivere una funzione che visualizzi un rettangolo di row righe per col colonne di *</div>
     </div>
     <div class="codice">
 <pre>
-placeholder
+#include <stdio.h>
+#define DIM 30
+
+void rettangolo(int,int);
+
+int main(){
+	int row,col;
+	printf("Row: ");
+	scanf("%d",&row);
+	fflush(stdin);
+	printf("Col: ");
+	scanf("%d",&col);
+	fflush(stdin);
+	rettangolo(row,col);
+	return 0;
+}
+
+void rettangolo(int row,int col){
+	int i,j;
+	putchar('\n');
+	for(i=0;i<row;i++){
+		for(j=0;j<col;j++){
+			printf(" * ");
+		}
+		putchar('\n');
+	}
+}
 </pre></div>
-<a href="ESERCIZI_C/002.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
+<a href="ESERCIZI_C/036.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
 </body>
 </html>
