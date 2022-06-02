@@ -6,17 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../style/style.css">
     <link rel="stylesheet" href="../../../font-awesome-4.7.0/css/font-awesome.css">
-    <title>001</title>
+    <title>048</title>
 </head>
 <body>
     <div class="headeres">
         <div class="titolo">Esercizio 14 | Stringhe</div>
-        <div class="descrizione">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quidem omnis eius libero vero deleniti! Maiores porro quo voluptates, repellat nemo consequatur libero voluptas odit quisquam dicta placeat at nisi?</div>
+        <div class="descrizione">Inserire un array di stringhe dimensionato DIM. Cercare la stringa se esiste o se non esiste. Esce con Enter</div>
     </div>
     <div class="codice">
 <pre>
-placeholder
+#include <stdio.h>
+#include <string.h>
+#define DIM 5
+#define L 80
+
+int CercaStringa();
+
+int main(){
+	char s[DIM][L],s1[L];
+	int i;
+	for(i=0;i<DIM;i++){
+		printf("%d^ stringa: ",i+1);
+		gets(s[i]);
+		fflush(stdin); 
+	}
+	printf("\nstringa da cercare: ");
+	gets(s1);
+	fflush(stdin);
+	if(CercaStringa(s,s1)==1){
+		printf("\n\n\t\tla stringa esiste");
+	}else{
+		printf("\n\n\t\tla stringa non esiste");
+	}
+}
+
+int CercaStringa(char s[DIM][L],char s1[L]){
+	int i;
+	for(i=0;i<DIM;i++){
+		if(strcmp(s[i],s1)==0){
+			return 1;
+		}
+	}
+	return 0;
+}
 </pre></div>
-<a href="ESERCIZI_C/014.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
+<a href="ESERCIZI_C/048.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
 </body>
 </html>
