@@ -15,8 +15,8 @@
     </div>
     <div class="codice">
 <pre>
-#include <stdio.h>
-#include <string.h>
+#include &lt;stdio.h>
+#include &lt;string.h>
 #define DIM 5
 #define L 80
 
@@ -25,7 +25,7 @@ int confronta(char s[DIM][L]);
 int main(){
 	char s[DIM][L];
 	int i;
-	for(i=0;i<DIM;i++){
+	for(i=0;i&lt;DIM;i++){
 		printf("%d^ stringa: ",i+1);
 		gets(s[i]);
 		fflush(stdin);
@@ -36,8 +36,8 @@ int main(){
 
 int confronta(char s[DIM][L]){
 	int i,c,n=0;
-	for(i=0;i<DIM;i++){
-		for(c=0;c<i;c++){
+	for(i=0;i&lt;DIM;i++){
+		for(c=0;c&lt;i;c++){
 			if(strcmp(s[i],s[c])==0){
 				n++;
 			}
