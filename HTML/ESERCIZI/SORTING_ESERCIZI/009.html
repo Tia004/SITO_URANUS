@@ -6,16 +6,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../style/style.css">
     <link rel="stylesheet" href="../../../font-awesome-4.7.0/css/font-awesome.css">
-    <title>001</title>
+    <title>009</title>
 </head>
 <body>
     <div class="headeres">
         <div class="titolo">Esercizio 9 | Sorting</div>
-        <div class="descrizione">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quidem omnis eius libero vero deleniti! Maiores porro quo voluptates, repellat nemo consequatur libero voluptas odit quisquam dicta placeat at nisi?</div>
+        <div class="descrizione">Dato una matrice numerica quadrata m dimensionato DIM=10 con caricamento contestuale a piacere [10..90]. Visualizzare la matrice. Riga dispari ordinata in modo crescente Riga pari ordinata in modo decrescente Visualizzare la matrice.</div>
     </div>
     <div class="codice">
 <pre>
-placeholder
+#include &lt;stdio.h>
+#include &lt;stdlib.h>
+#include &lt;time.h>
+#define DIM 10
+
+void visualizza(int [][DIM]);
+void sorting_per_row(int [][DIM]);
+
+int main(){
+	int m[DIM][DIM];
+	int i,j;
+	srand(time(NULL));
+	for(i=0;i&lt;DIM;i++){
+		for(j=0;j&lt;DIM;j++){
+			m[i][j]=rand()%80+10;
+		}
+	}
+	printf("Matrice:\n");
+	visualizza(m);
+	printf("Matrice ordinata:\n(righe pari -> decrescenti  |  righe dispari -> crescenti )\n");
+	sorting_per_row(m);
+	visualizza(m);
+	return 0;
+}
+
+void visualizza(int m[DIM][DIM]){
+	int i,j;
+	for(i=0;i&lt;DIM;i++){
+		for(j=0;j&lt;DIM;j++){
+			printf("%3d",m[i][j]);
+		}
+		putchar('\n');
+	}
+	putchar('\n');
+}
+
+void sorting_per_row(int m[DIM][DIM]){
+	int i,j,k1,k2,box;
+	for(i=0;i&lt;DIM;i++){
+		for(j=0;j&lt;DIM;j++){
+			if(i%2==1){
+				for(k1=0;k1&lt;DIM;k1++){
+					for(k2=k1+1;k2&lt;DIM;k2++){
+						if(m[i][k2]>m[i][k1]){
+							box=m[i][k2];
+							m[i][k2]=m[i][k1];
+							m[i][k1]=box;
+						}
+					}
+				}
+			}else{
+				for(k1=0;k1&lt;DIM;k1++){
+					for(k2=k1+1;k2&lt;DIM;k2++){
+						if(m[i][k2]&lt;m[i][k1]){
+							box=m[i][k2];
+							m[i][k2]=m[i][k1];
+							m[i][k1]=box;
+						}
+					}
+				}
+			}
+		}
+	}
+}
 </pre></div>
 <a href="ESERCIZI_C/009.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
 </body>
