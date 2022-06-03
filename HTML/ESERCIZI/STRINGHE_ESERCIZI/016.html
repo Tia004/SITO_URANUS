@@ -15,8 +15,8 @@
     </div>
     <div class="codice">
 <pre>
-#include <stdio.h>
-#include <string.h>
+#include &lt;stdio.h>
+#include &lt;string.h>
 #define DIM 80
 typedef char string;
 
@@ -28,7 +28,7 @@ int main(){
 	printf("Stringa: ");
 	gets(s1);
 	fflush(stdin);
-	for(i=0;i<strlen(s1);i++){
+	for(i=0;i&lt;strlen(s1);i++){
         if(s1[i]!=' '){
             s2[j]=s1[i];
             j++;
@@ -36,7 +36,7 @@ int main(){
 	}
 	printf("\nSenza spazi: ");
 	puts(s2);
-	for(i=0;i<strlen(s2);i++){
+	for(i=0;i&lt;strlen(s2);i++){
         if(s2[i]>=65 && s2[i]<=90){
         	s2[i]+=32;
 		}
@@ -51,8 +51,8 @@ int main(){
 
 void sorting(string s[]){
     int i,j,temp;
-    for(i=0; i<strlen(s); i++){
-        for(j=i+1; j<strlen(s); j++){
+    for(i=0; i&lt;strlen(s); i++){
+        for(j=i+1; j&lt;strlen(s); j++){
             if(s[i]>s[j]){
                 temp=s[j];
                 s[j]=s[i];
