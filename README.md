@@ -7,5 +7,5 @@ Lavoro svolto integralmente dal gruppo didattico di Uranus
 
 Persone:  Francesco Rastelli (frastelli@fermimn.edu.it)
           Tia Chinaglia (mchinaglia@fermimn.edu.it)
-          Omar Lanfre (olanfredi@fermimn.edu.it)
+          Omar Lanfredi (olanfredi@fermimn.edu.it)
           Matteo Braguzzi (mbraguzzi@fermimn.edu.it)
