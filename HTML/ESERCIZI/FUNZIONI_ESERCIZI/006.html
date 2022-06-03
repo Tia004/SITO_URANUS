@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../style/style.css">
+    <link rel="stylesheet" href="../../../font-awesome-4.7.0/css/font-awesome.css">
+    <title>047</title>
+</head>
+<body>
+    <div class="headeres">
+        <div class="titolo">Esercizio 6 | Funzioni</div>
+        <div class="descrizione">Quale data è maggiore tra 2 date</div>
+    </div>
+    <div class="codice">
+<pre>
+#include <stdio.h>
+
+int ValidData(int,int,int);
+int TotData(int,int,int);
+
+int main(){
+	unsigned int gg1,mm1,aa1,gg2,mm2,aa2;
+	int diff;
+	do{
+		printf("\t\tINSERIMENTO DATA 1 (gg/mm/aa)\n\n");
+		printf("Giorno: ");
+		scanf("%ui",&gg1);
+		fflush(stdin);
+		printf("Mese: ");
+		scanf("%ui",&mm1);
+		fflush(stdin);
+		printf("Anno: ");
+		scanf("%ui",&aa1);
+		fflush(stdin);
+	}while(ValidData(gg1,mm1,aa1)!=1);
+	do{
+		printf("\t\tINSERIMENTO DATA 2 (gg/mm/aa)\n\n");
+		printf("Giorno: ");
+		scanf("%ui",&gg2);
+		fflush(stdin);
+		printf("Mese: ");
+		scanf("%ui",&mm2);
+		fflush(stdin);
+		printf("Anno: ");
+		scanf("%ui",&aa2);
+		fflush(stdin);
+	}while(ValidData(gg2,mm2,aa2)!=1);
+	if(TotData(gg1,mm1,aa1)>TotData(gg2,mm2,aa2)){
+		printf("\n\nLa data %u/%u/%u e' maggiore della data %u/%u/%u",gg1,mm1,aa1,gg2,mm2,aa2);
+		diff=TotData(gg1,mm1,aa1)-TotData(gg2,mm2,aa2);
+	}else{
+		printf("\n\nLa data %u/%u/%u e' maggiore della data %u/%u/%u",gg2,mm2,aa2,gg1,mm1,aa1);
+		diff=TotData(gg2,mm2,aa2)-TotData(gg1,mm1,aa1);
+	}
+	printf("\n\nLa differenza tra le due date e' di %d giorni",diff);
+	return 0;
+}
+
+int ValidData(int gg,int mm,int aa){
+	if(mm>0 && mm<=12){
+		if(mm==4 || mm==6 || mm==9){
+			if(gg>=1 && gg<=30){
+				return 1;
+			}else{
+				return 0;
+			}
+		}else if(mm==2){
+			if(aa%4==0){
+				if(aa%100==0){
+					if(aa%400==0){
+						if(gg>=1 && gg<=29){
+							return 1;
+						}else{
+							return 0;
+						}
+					}
+				}else{
+					if(gg>=1 && gg<=29){
+						return 1;
+					}else{
+						return 0;
+					}
+				}
+			}else{
+				if(gg>=1 && gg<=28){
+					return 1;
+				}else{
+					return 0;
+				}
+			}
+		}else{
+			if(gg>=1 && gg<=31){
+				return 1;
+			}else{
+				return 0;
+			}
+		}
+	}else{
+		return 0;
+	}
+}
+
+int TotData(int gg,int mm,int aa){
+	int gtot=0;
+	if(aa%4==0){
+		if(aa%100==0){
+			if(aa%400==0){
+				gtot=gtot+(aa-1)*366;
+			}
+		}else{
+			gtot=gtot+(aa-1)*366;
+		}
+	}else{
+		gtot=gtot+(aa-1)*365;
+	}
+	if(mm<=2){
+		if(aa%4==0){
+			if(aa%100==0){
+				if(aa%400==0){
+					gtot=gtot+31+29;
+				}
+			}else{
+				gtot=gtot+31+29;
+			}
+		}else{
+			gtot=gtot+31+28;
+		}
+	}else if(mm<6){
+		gtot=gtot+mm*31;
+		gtot=gtot+1;
+	}else if(mm<8){
+		gtot=gtot+mm*31;
+		gtot=gtot+2;
+	}else if(mm>=9){
+		gtot=gtot+mm*31;
+		gtot=gtot+3;	
+	}
+	gtot=gtot+gg;
+	return gtot;
+}
+</pre></div>
+<a href="ESERCIZI_C/047.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
+</body>
+</html>
