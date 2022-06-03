@@ -10,43 +10,33 @@
 </head>
 <body>
     <div class="headeres">
-        <div class="titolo">Esercizio 16 | Array</div>
+        <div class="titolo">Esercizio 23 | Array</div>
         <div class="descrizione">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quidem omnis eius libero vero deleniti! Maiores porro quo voluptates, repellat nemo consequatur libero voluptas odit quisquam dicta placeat at nisi?</div>
     </div>
     <div class="codice">
 <pre>
     #include&lt;stdio.h>
-        #define DIM 10
+        #define DIM 5
         
         int main()
         {
-            char v[]={'P','R','O','V','A'},v2[]={'E','S','A','M','E'},
-            w[DIM],i,c=0;
+            int v[DIM],i,n;
             
-            for(i=0;i&lt;DIM/2;i++){
-                    w[i]=v[i];
+            printf("inserisci un numero di 5 cifre: ");
+            scanf("%d",&n);
+            fflush(stdin);
+            for(i=DIM-1;n>0;i--){
+                v[i]=n%10;
+                n=n-v[i];
+                n=n/10;
             }
-            for(i=5;i&lt;DIM;i++){
-                    w[i]=v2[c];
-                    c++;
-            }
-        
-            for(i=0;i&lt;DIM/2;i++){
-                printf("%c",v[i]);
-            }
-            putchar('\n');
-            for(i=0;i&lt;DIM/2;i++){
-                printf("%c",v2[i]);
-            }
-            putchar('\n');
-            for(i=0;i&lt;DIM;i++){
-                printf("%c",w[i]);
-            }	
-        
+            for(i=0;i&lt;DIM;i++)
+                printf("%d\t",v[i]);
+            
             return 0;
         }
         
 </pre></div>
-<a href="ESERCIZI_C/016.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
+<a href="ESERCIZI_C/023.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
 </body>
 </html>

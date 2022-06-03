@@ -15,7 +15,27 @@
     </div>
     <div class="codice">
 <pre>
-placeholder
+    #include&lt;stdio.h>
+        #define ROW 8
+        #define COL 11
+        
+        int main()
+        {
+            int m[ROW][COL],i,j;
+            
+            for(i=0;i&lt;ROW;i++)
+                for(j=0;j&lt;COL;j++)
+                    m[i][j]=i+j;
+            
+            for(i=0;i&lt;ROW;i++){
+                for(j=0;j&lt;COL;j++)
+                    printf("%3d",m[i][j]);
+                putchar('\n');
+            }
+            
+            return 0;
+        }
+        
 </pre></div>
 <a href="ESERCIZI_C/017.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
 </body>

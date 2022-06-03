@@ -16,7 +16,29 @@
     </div>
     <div class="codice">
 <pre>
-placeholder
+    #include &lt;stdio.h>
+        #define DIM 10
+        
+        int main()
+        {
+            int i,j,c=0;
+            char let[DIM];
+            char vocali[]={'A','E','I','O','U'};
+            srand(time(NULL));
+            
+            for(i=0;i&lt;DIM;i++){
+                let[i]=rand()%26+65;
+                printf("%c	",let[i]);
+            }
+            for(i=0;i&lt;DIM;i++)
+                for(j=0;j&lt;(sizeof(vocali)/sizeof(char));j++)
+                    if(let[i]==vocali[j])
+                        c++;
+            printf("\n\nvocali = %d",c);
+                
+            return 0;
+        }
+        
 </pre></div>
 <a href="ESERCIZI_C/004.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
 </body>

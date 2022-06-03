@@ -15,7 +15,48 @@
     </div>
     <div class="codice">
 <pre>
-placeholder
+    #include &lt;stdio.h>
+        #include &lt;stdlib.h>
+        #include &lt;time.h>
+        #define DIM 10
+        
+        void carica(int []);
+        void scambia(int []);
+        void visualizza(int []);
+        
+        int main(){
+            int v[DIM];
+            srand(time(NULL));
+            carica(v);
+            visualizza(v);
+            scambia(v);
+            visualizza(v);
+            return 0;
+        }
+        
+        void carica(int v[]){
+            int i;
+            for(i=0;i&lt;DIM;i++)
+                v[i]=rand()%90+10;
+        }
+        
+        void scambia(int v[]){
+            int i,temp;
+            for(i=0;i&lt;DIM;i+=2){
+                temp=v[i];
+                v[i]=v[i+1];
+                v[i+1]=temp;
+            }
+        }
+        
+        void visualizza(int v[]){
+            int i;
+            for(i=0; i&lt;DIM; i++){
+                printf("%d\t",v[i]);
+            }
+            putchar('\n');
+        }
+        
 </pre></div>
 <a href="ESERCIZI_C/019.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
 </body>

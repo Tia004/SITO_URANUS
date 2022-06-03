@@ -15,7 +15,32 @@
     </div>
     <div class="codice">
 <pre>
-placeholder
+    #include&lt;stdio.h>
+        #define DIM 15
+        
+        int main()
+        {
+            int v[DIM],i,j,c=1,cd=0,flag=0;
+            for(i=0;i&lt;DIM;i++){ 
+                flag=0;
+                do{
+                    cd=0;
+                    for(j=2;j&lt;=c;j++)
+                        if(c%j==0)
+                            cd++;
+                    if(cd==1){
+                        v[i]=c;
+                        flag=1;
+                    }
+                    c++;
+                }while(flag==0);
+            }
+            for(i=0;i&lt;DIM;i++)
+                printf("%4d",v[i]);
+            
+            return 0;
+        }
+        
 </pre></div>
 <a href="ESERCIZI_C/006.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
 </body>
