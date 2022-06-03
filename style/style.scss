@@ -548,10 +548,28 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 4em;
+    padding: 100px;
+    font-weight: bolder;
 }
 
 @media only screen and (max-width: 1364px){
-    .schermopiccolo {
+    .schermopiccolo{
+        background: #f1edea;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 40;
+    }
+}
+
+@media only screen and (max-height: 680px){
+    .schermopiccolo{
         background: #f1edea;
         position: absolute;
         width: 100vw;
