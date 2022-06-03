@@ -6,16 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../style/style.css">
     <link rel="stylesheet" href="../../../font-awesome-4.7.0/css/font-awesome.css">
-    <title>001</title>
+    <title>007</title>
 </head>
 <body>
     <div class="headeres">
         <div class="titolo">Esercizio 7 | Sorting</div>
-        <div class="descrizione">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quidem omnis eius libero vero deleniti! Maiores porro quo voluptates, repellat nemo consequatur libero voluptas odit quisquam dicta placeat at nisi?</div>
+        <div class="descrizione">Data una stringa s="Oggi ProVIAMO a VeDere chi Vince" caricata contestualmente estrarre solo le maiuscole e ordinarle in una seconda stringa s2 in modo discendente. Visualizzare s. Visualizzare s2</div>
     </div>
     <div class="codice">
 <pre>
-placeholder
+#include&lt;stdio.h>
+#include&lt;string.h>
+#define L 80
+
+void maiuscole(char [], char []);
+void ordina(char []);
+
+int main(){
+	char s[]="Oggi ProVIAMO a VeDere chi Vince", s2[L];
+	puts(s);
+	maiuscole(s, s2);
+	ordina(s2);
+	puts(s2);
+}
+
+void maiuscole(char s[], char s2[]){
+	int i, j=0;
+	for(i=0;s[i]!='\0';i++)
+		if(s[i]>='A' && s[i]&lt;='Z'){
+			s2[j]=s[i];
+			j++;
+		}
+	s2[j]='\0';
+}
+
+void ordina(char s2[]){
+	int i, j;
+	char min;
+	for(i=1;s2[i]!='\0';i++){
+		min=s2[i];
+		j=i-1;
+		while(min>s2[j] && j>=0){
+			s2[j+1]=s2[j];
+			j=j-1;
+		}
+		s2[j+1]=min;
+	}
+}
 </pre></div>
 <a href="ESERCIZI_C/007.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
 </body>
