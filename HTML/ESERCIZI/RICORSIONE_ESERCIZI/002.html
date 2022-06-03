@@ -11,11 +11,53 @@
 <body>
     <div class="headeres">
         <div class="titolo">Esercizio 2 | Ricorsione</div>
-        <div class="descrizione">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quidem omnis eius libero vero deleniti! Maiores porro quo voluptates, repellat nemo consequatur libero voluptas odit quisquam dicta placeat at nisi?</div>
+        <div class="descrizione">Calcolare il massimo di un vettore v dimensionato DIM con procedimento ricorsivo.</div>
     </div>
     <div class="codice">
 <pre>
-placeholder
+#include&lt;stdio.h>
+#include&lt;stdlib.h>
+#include&lt;time.h>
+#define DIM 10
+        
+void carica(int []);
+void visualizza(int []);
+int max(int [], int, int);
+        
+int main()
+{
+    int v[DIM];
+    srand(time(NULL));
+            
+    carica(v);
+    visualizza(v);
+    printf("numero massimo = %d",max(v,v[0],DIM-1));
+            
+    return 0;
+}
+        
+void carica(int v[DIM]){
+    int i;
+    for(i=0;i&lt;DIM;i++)
+        v[i]=rand()%99+1;
+}
+void visualizza(int v[DIM]){
+    int i;
+    for(i=0;i&lt;DIM;i++)
+        printf("%d\t",v[i]);
+    putchar('\n');
+}
+int max(int v[DIM], int maxx, int i){
+    if(i==0){
+        return maxx;
+    }else{
+        if(v[i]>maxx)
+            return max(v, v[i], i-1);
+        else
+            return max(v, maxx, i-1);
+    }
+}
+        
 </pre></div>
 <a href="ESERCIZI_C/002.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
 </body>
