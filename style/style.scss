@@ -41,6 +41,7 @@ body {
     height: 10vh;
     display: flex;
     align-items: center;
+    z-index: 3;
 }
 
 .menu ul {
@@ -122,6 +123,7 @@ body {
     left: 3%;
     font-size: 2em;
     color: #111;
+    z-index: 3;
 }
 
 .uranus {
@@ -166,11 +168,24 @@ body {
     left: 30px;
     border: 2px solid #111;
     transition: .3s;
+    z-index: 3;
 }
 
 .freccia:hover {
     background: #111;
     color: #f1edea;
+}
+
+.cards {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    z-index: 0;
 }
 
 .card {
@@ -197,11 +212,6 @@ body {
     border-radius: 50%;
     border: 3px solid #fff;
     box-shadow: 0 10px 40px #00000040;
-}
-
-.card .banner:nth-child(1){
-    background: url(../IMG/Lanfre_Banner.png);
-    background-size: cover;
 }
 
 .card h1 {
