@@ -15,7 +15,40 @@
     </div>
     <div class="codice">
 <pre>
-placeholder
+    #include &lt;stdio.h>
+        #define DIM 5
+        
+        int main()
+        {
+            int v[DIM],n,i,j;
+            
+            printf("inserisci il 1' numero: ");		//inserisco il primo numero
+            scanf("%d",&v[0]);
+            fflush(stdin);
+            
+            for(i=1;i&lt;DIM;i++){
+                printf("inserisci il %d' numero: ",i+1);		
+                scanf("%d",&n);
+                fflush(stdin);
+                j=0;
+                while(j&lt;DIM){
+                    if(n==v[j]){
+                        printf("reinserisci il %d' numero: ",i+1);		
+                        scanf("%d",&n);
+                        fflush(stdin);
+                        j=0;
+                    }
+                    j++;
+                }
+                v[i]=n;
+            }
+            
+            for(i=0;i&lt;DIM;i++)		//visualizzazione
+                printf("%d	",v[i]);
+                
+            return 0;
+        }
+        
 </pre></div>
 <a href="ESERCIZI_C/005.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
 </body>
