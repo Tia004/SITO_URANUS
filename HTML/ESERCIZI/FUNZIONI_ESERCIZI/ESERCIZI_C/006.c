@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #define DIM 5
-#define L 80
+#define L 80 
 
 int CercaStringa();
 
