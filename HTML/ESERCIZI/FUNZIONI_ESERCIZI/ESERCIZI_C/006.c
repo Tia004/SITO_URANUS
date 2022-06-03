@@ -13,14 +13,19 @@ int main(){
 		gets(s[i]);
 		fflush(stdin); 
 	}
-	printf("\nstringa da cercare: ");
+	printf("\nStringa da cercare(Esce con 0): ");
 	gets(s1);
 	fflush(stdin);
-	if(CercaStringa(s,s1)==1){
-		printf("\n\n\t\tla stringa esiste");
-	}else{
-		printf("\n\n\t\tla stringa non esiste");
-	}
+	while(strcmp(s1,"0")!=0){
+		if(CercaStringa(s,s1)==1){
+			printf("\n\t\tla stringa esiste");
+		}else{
+			printf("\n\t\tla stringa non esiste");
+		}
+		printf("\nStringa da cercare(Esce con 0): ");
+		gets(s1);
+		fflush(stdin);
+	}	
 }
 
 int CercaStringa(char s[DIM][L],char s1[L]){
