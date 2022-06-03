@@ -14,7 +14,7 @@ int main(){
 		fflush(stdin); 
 	}
 	printf("\nStringa da cercare(Esce con 0): ");
-	gets(s1);
+	gets(s1); 
 	fflush(stdin);
 	while(strcmp(s1,"0")!=0){
 		if(CercaStringa(s,s1)==1){
