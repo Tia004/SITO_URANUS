@@ -30,19 +30,19 @@
             printf("inserisci il numero: ");
             scanf("%d",&k);
             fflush(stdin);
-            for(i=0;i&lt;DIM;i++){ 		//caricamento e visualizzazione
+            for(i=0;i&lt;DIM;i++){ 
                 v[i]=rand()%100+1;
                 printf("%d  ",v[i]);
             }
             for(i=0;i&lt;DIM;i++){
-                s=k-v[i];				//sottrazione che determina quanto v[i] sia vicino a k
-                s=abs(s);				//assoluto che determina che s sia sempre positivo, in modo che conti sia i numeri maggiori e minori di k 
-                if(s&lt;ps){				//se s < dell'attuale sottrazione assoluta del numero pi� vicino a k
-                    ps=s;				//la sottrazione assoluta del numero pi� vicino a k diventa s
-                    p=v[i];				//il numero pi� vicino a k diventa il vettore
-                    cf=c;				//contatore finale a cui viene assegnato il valore della posizione del vettore
+                s=k-v[i];	
+                s=abs(s);
+                if(s&lt;ps){		
+                    ps=s;	
+                    p=v[i];
+                    cf=c;	
                 }
-                c++;					//contatore che aumenta ogni volta
+                c++;
             }
             if(p==MAX)
                 printf("\n\nERRORE");
