@@ -125,10 +125,10 @@ int TotData(int gg,int mm,int aa){
 		}else{
 			gtot=gtot+31+28;
 		}
-	}else if(mm<6){
+	}else if(mm&lt;6){
 		gtot=gtot+mm*31;
 		gtot=gtot+1;
-	}else if(mm<8){
+	}else if(mm&lt;8){
 		gtot=gtot+mm*31;
 		gtot=gtot+2;
 	}else if(mm>=9){
