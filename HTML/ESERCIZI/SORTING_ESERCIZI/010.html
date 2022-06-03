@@ -6,16 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../style/style.css">
     <link rel="stylesheet" href="../../../font-awesome-4.7.0/css/font-awesome.css">
-    <title>001</title>
+    <title>010</title>
 </head>
 <body>
     <div class="headeres">
         <div class="titolo">Esercizio 10 | Sorting</div>
-        <div class="descrizione">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quidem omnis eius libero vero deleniti! Maiores porro quo voluptates, repellat nemo consequatur libero voluptas odit quisquam dicta placeat at nisi?</div>
+        <div class="descrizione">Dato un vettore numerico v dimensionato DIM=20 con caricamento random [1..9]. Visualizzare la cifra che presenta più occorrenze</div>
     </div>
     <div class="codice">
 <pre>
-placeholder
+#include &lt;stdio.h>
+#include &lt;stdlib.h>
+#include &lt;time.h>
+#define DIM 20
+
+int view_count(int []);
+
+int main(){
+	int i,v[DIM];
+	for(i=0;i&lt;DIM;i++){
+		v[i]=rand()%9+1;
+	}
+	printf("Vettore: ");
+	for(i=0;i&lt;DIM;i++){
+		printf("%3d",v[i]);
+	}
+	printf("\n\nLa cifra che presenta piu' occorrenze e' %d",v[view_count(v)]);
+	return 0;
+}
+
+int view_count(int v[DIM]){
+	int i,j,cmax=0;
+	int c[DIM];
+	for(i=0;i&lt;DIM;i++){
+		c[i]=1;
+	}
+	for(i=0;i&lt;DIM;i++){
+		for(j=i+1;j&lt;DIM;j++){
+			if(v[j]==v[i]){
+				c[i]++;
+			}
+		}
+	}
+	for(i=0;i&lt;DIM;i++){
+		if(c[i]>cmax){
+			cmax=c[i];
+		}
+	}
+	for(i=0;i&lt;DIM;i++){
+		if(c[i]==cmax){
+			return i;
+		}
+	}
+	
+}
 </pre></div>
 <a href="ESERCIZI_C/010.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
 </body>
