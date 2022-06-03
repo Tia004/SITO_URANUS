@@ -6,16 +6,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../style/style.css">
     <link rel="stylesheet" href="../../../font-awesome-4.7.0/css/font-awesome.css">
-    <title>001</title>
+    <title>006</title>
 </head>
 <body>
     <div class="headeres">
         <div class="titolo">Esercizio 6 | Sorting</div>
-        <div class="descrizione">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quidem omnis eius libero vero deleniti! Maiores porro quo voluptates, repellat nemo consequatur libero voluptas odit quisquam dicta placeat at nisi?</div>
+        <div class="descrizione">Caricare un vet v DIM=20 con numeri random a piacere. Visualizzare v. Ordinare la prima metà di v e poi la seconda metà di v. Alla fine v risulterà ordinato. Visualizzare nuovamente v</div>
     </div>
     <div class="codice">
 <pre>
-placeholder
+#include &lt;stdio.h>
+#include &lt;stdlib.h>
+#include &lt;time.h>
+#define DIM 20
+
+void visualizza(int []);
+void carica(int []);
+
+int main(){
+	int v[DIM],i,j,box;
+	carica(v);
+	printf("Vettore: ");
+	visualizza(v);
+	for(i=0;i&lt;DIM/2-1;i++){
+		for(j=i+1;j&lt;DIM/2;j++){
+			if(v[j]&lt;v[i]){
+				box=v[j];
+				v[j]=v[i];
+				v[i]=box;
+			}
+		}
+	}
+	printf("Prima meta ordinata: ");
+	for(i=0;i&lt;DIM/2-1;i++){
+		printf("%d  ",v[i]);
+	}
+	putchar('\n');
+	for(i=DIM/2;i&lt;DIM-1;i++){
+		for(j=i+1;j&lt;DIM;j++){
+			if(v[j]&lt;v[i]){
+				box=v[j];
+				v[j]=v[i];
+				v[i]=box;
+			}
+		}
+	}
+	printf("Seconda meta ordinata: ");
+	for(i=DIM/2;i&lt;DIM-1;i++){
+		printf("%d  ",v[i]);
+	}
+	putchar('\n');
+	printf("Vettore ordinato: ");
+	visualizza(v);
+	return 0;
+}
+
+void visualizza(int v[DIM]){
+	int i;
+	for(i=0;i&lt;DIM;i++){
+		printf("%d  ",v[i]);
+	}
+	putchar('\n');
+}
+
+void carica(int v[DIM]){
+	int i;
+	srand(time(NULL));
+	for(i=0;i&lt;DIM;i++){
+		v[i]=rand()%100+1;
+	}
+}
 </pre></div>
 <a href="ESERCIZI_C/006.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
 </body>
