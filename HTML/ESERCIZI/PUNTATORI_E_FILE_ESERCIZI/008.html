@@ -11,11 +11,35 @@
 <body>
     <div class="headeres">
         <div class="titolo">Esercizio 8 | Puntatori e File</div>
-        <div class="descrizione">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quidem omnis eius libero vero deleniti! Maiores porro quo voluptates, repellat nemo consequatur libero voluptas odit quisquam dicta placeat at nisi?</div>
+        <div class="descrizione">Dato un file si testo "prova.txt" riversare<br>il file su un secondo file "prova2.txt", ma al posto<br> della 'f' va scritta la stringa "effe".<br>
+            es: caffettiera -> caeffeeffettiera</div>
     </div>
     <div class="codice">
 <pre>
-placeholder
+    #include&lt;stdio.h>
+        #include&lt;stdlib.h>
+        int main()
+        {
+            FILE *fp,*fpout;
+            fp=fopen("prova.txt","r");
+            fpout=fopen("output.txt","w");
+            if (fp==NULL){
+                perror("errore apertura file");
+                exit(1);
+            }
+            char car,str[]="effe";
+            while((car=fgetc(fp))!=EOF){	
+                if(car=='f')
+                    fputs(str,fpout);
+                else
+                    fputc(car,fpout);
+            }
+            fclose(fp);
+            fclose(fpout);
+            
+            return 0;
+        }
+        
 </pre></div>
 <a href="ESERCIZI_C/008.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
 </body>

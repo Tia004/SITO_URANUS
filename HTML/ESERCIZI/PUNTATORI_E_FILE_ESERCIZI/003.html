@@ -11,11 +11,31 @@
 <body>
     <div class="headeres">
         <div class="titolo">Esercizio 3 | Puntatori e File</div>
-        <div class="descrizione">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quidem omnis eius libero vero deleniti! Maiores porro quo voluptates, repellat nemo consequatur libero voluptas odit quisquam dicta placeat at nisi?</div>
+        <div class="descrizione">copiare un file "prova.txt" su un altro file "provacopy.txt"
+        </div>
     </div>
     <div class="codice">
 <pre>
-placeholder
+    #include&lt;stdio.h>
+        #include&lt;stdlib.h>
+        
+        int main()
+        {
+            FILE *fi,*fo;
+            char car;
+            fi=fopen("prova.txt","r");
+            fo=fopen("provacopy.txt","w");
+            if(fi==NULL){
+                perror("error: ");
+                exit(1);
+            }
+            while((car=fgetc(fi))!=EOF)
+                fprintf(fo,"%c",car);
+            fclose(fi);
+            fclose(fo);
+            return 0;
+        }
+        
 </pre></div>
 <a href="ESERCIZI_C/003.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
 </body>

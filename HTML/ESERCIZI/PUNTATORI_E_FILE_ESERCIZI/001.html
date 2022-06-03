@@ -11,11 +11,41 @@
 <body>
     <div class="headeres">
         <div class="titolo">Esercizio 1 | Puntatori e File</div>
-        <div class="descrizione">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quidem omnis eius libero vero deleniti! Maiores porro quo voluptates, repellat nemo consequatur libero voluptas odit quisquam dicta placeat at nisi?</div>
+        <div class="descrizione">puntatori e ricorsione<br>
+            ==========================<br>
+            Scrivere la funzione ricorsiva:<br>
+            int count_char(char *str, char c, int) // + facile<br>
+            int count_char(char *str, char c) // + difficile<br>
+            che conta il numero di occorrenze del carattere c nella stringa str.<br></div>
     </div>
     <div class="codice">
 <pre>
-placeholder
+    #include&lt;stdio.h>
+        #include&lt;stdlib.h>
+        #define DIM 80
+        int count_char(char *, char);
+        int main() {
+            char c, s[DIM];
+            char *str;
+            str=&s[0];
+            printf("Inserire Stringa: ");
+            gets(s);
+            printf("Inserire carattere da contare: ");
+            scanf("%c", &c);
+            fflush(stdin);
+            printf("Il carattere %c appare %d volte", c, count_char(str, c));
+            return 0;
+        }
+        int count_char(char *str, char c) {
+            if (*str=='\0')
+                return 0;
+            else
+                if(*str==c)
+                    return count_char((str+1), c)+1;
+                else
+                    return count_char((str+1), c);
+        }
+        
 </pre></div>
 <a href="ESERCIZI_C/001.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
 </body>

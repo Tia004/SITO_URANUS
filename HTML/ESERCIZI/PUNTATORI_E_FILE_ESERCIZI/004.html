@@ -11,11 +11,35 @@
 <body>
     <div class="headeres">
         <div class="titolo">Esercizio 4 | Puntatori e File</div>
-        <div class="descrizione">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quidem omnis eius libero vero deleniti! Maiores porro quo voluptates, repellat nemo consequatur libero voluptas odit quisquam dicta placeat at nisi?</div>
+        <div class="descrizione">appendere "file2.txt" a "file1.txt" in un "fileall.txt" 
+        </div>
     </div>
     <div class="codice">
 <pre>
-placeholder
+    #include&lt;stdio.h>
+        #include&lt;stdlib.h>
+        
+        int main()
+        {
+            FILE *f1,*f2,*fa;
+            char car;
+            f1=fopen("file1.txt","r");
+            f2=fopen("file2.txt","r");
+            fa=fopen("fileall.txt","a");
+            if(f1==NULL || f2==NULL){
+                perror("error: ");
+                exit(1);
+            }
+            while((car=fgetc(f1))!=EOF)
+                fprintf(fa,"%c",car);
+            while((car=fgetc(f2))!=EOF)
+                fprintf(fa,"%c",car);
+            fclose(f1);
+            fclose(f2);
+            fclose(fa);	
+            return 0;
+        }
+        
 </pre></div>
 <a href="ESERCIZI_C/004.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
 </body>

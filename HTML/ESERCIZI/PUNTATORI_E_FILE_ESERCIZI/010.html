@@ -11,11 +11,37 @@
 <body>
     <div class="headeres">
         <div class="titolo">Esercizio 10 | Puntatori e File</div>
-        <div class="descrizione">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quidem omnis eius libero vero deleniti! Maiores porro quo voluptates, repellat nemo consequatur libero voluptas odit quisquam dicta placeat at nisi?</div>
+        <div class="descrizione">dato un file "numeri.num" contare quante cifre ci sono e attaccarle a fine file.<br>
+            (NB: il numero va scomposto nelle sue cifre prima di convertirlo in testo)<br>
+            <br>
+            es: "prova di 12345 scrittura 123123 alla 0 fine."<br>
+            -> "prova di 12345 scrittura 123123 alla 0 fine.12"</div>
     </div>
     <div class="codice">
 <pre>
-placeholder
+    #include&lt;stdio.h>
+        #include&lt;stdlib.h>
+        
+        int main()
+        {
+            FILE *fp;
+            int c=0;
+            char car;
+            fp=fopen("numeri.num","r");
+            if(fp==NULL){
+                perror("error: ");
+                exit(1);
+            }
+            while((car=fgetc(fp))!=EOF)
+                if(car>='0' && car&lt;='9')
+                    c++;
+            fclose(fp);
+            fp=fopen("numeri.num","a");
+            fseek(fp,0,SEEK_END);
+            fprintf(fp,"%d",c);
+            return 0;
+        }
+        
 </pre></div>
 <a href="ESERCIZI_C/010.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
 </body>

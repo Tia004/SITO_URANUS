@@ -11,11 +11,27 @@
 <body>
     <div class="headeres">
         <div class="titolo">Esercizio 2 | Puntatori e File</div>
-        <div class="descrizione">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quidem omnis eius libero vero deleniti! Maiores porro quo voluptates, repellat nemo consequatur libero voluptas odit quisquam dicta placeat at nisi?</div>
+        <div class="descrizione">leggere un file "prova.txt" e visualizzarlo </div>
     </div>
     <div class="codice">
 <pre>
-placeholder
+    #include&lt;stdio.h>
+        #include&lt;stdlib.h>
+        
+        int main()
+        {
+            FILE *fp;
+            char car;
+            fp=fopen("prova.txt","r");
+            if(fp==NULL){
+                perror("error: ");
+                exit(1);
+            }		
+            while((car=fgetc(fp))!=EOF)
+                printf("%c",car);
+            fclose(fp);
+            return 0;
+        }       
 </pre></div>
 <a href="ESERCIZI_C/002.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
 </body>

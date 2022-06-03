@@ -11,11 +11,30 @@
 <body>
     <div class="headeres">
         <div class="titolo">Esercizio 5 | Puntatori e File</div>
-        <div class="descrizione">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quidem omnis eius libero vero deleniti! Maiores porro quo voluptates, repellat nemo consequatur libero voluptas odit quisquam dicta placeat at nisi?</div>
+        <div class="descrizione">leggere un file "numeri.txt" e vedere quante cifre [0..9] ci sono </div>
     </div>
     <div class="codice">
 <pre>
-placeholder
+    #include&lt;stdio.h>
+        #include&lt;stdlib.h>
+        
+        int main()
+        {
+            FILE *fp;
+            int n,c=0;
+            fp=fopen("numeri.txt","r");
+            if(fp==NULL){
+                perror("error: ");
+                exit(1);
+            }
+            while(fscanf(fp,"%d",&n)!=EOF)
+                c++;
+            printf("ci sono %d cifre",c);
+            fclose(fp);
+            return 0;
+        }
+        
+        
 </pre></div>
 <a href="ESERCIZI_C/005.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
 </body>

@@ -11,11 +11,43 @@
 <body>
     <div class="headeres">
         <div class="titolo">Esercizio 9 | Puntatori e File</div>
-        <div class="descrizione">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quidem omnis eius libero vero deleniti! Maiores porro quo voluptates, repellat nemo consequatur libero voluptas odit quisquam dicta placeat at nisi?</div>
+        <div class="descrizione">Dato un file si testo "prova.txt" riversare il file<br> su un secondo file "prova2.txt", ma al posto<br> della stringa 'effe va scritto il carattere 'f.<br>
+            es: caeffeeffeettiera -> caffettiera
+            </div>
     </div>
     <div class="codice">
 <pre>
-placeholder
+    #include&lt;stdio.h>
+        #include&lt;stdlib.h>
+        #include&lt;stdlib.h>
+        #includestring.h>
+        int main()
+        {
+            FILE *fp,*fpout;
+            fp=fopen("prova.txt","r");
+            fpout=fopen("output.txt","w");
+            if (fp==NULL){
+                perror("errore apertura file");
+                exit(1);
+            }
+            
+            char car[80];
+            int i;
+            fgets(car,80,fp);
+            for(i=0;i&lt;strlen(car);i++){
+                if(car[i]=='e' && car[i+1]=='f' && car[i+2]=='f' && car[i+3]=='e'){
+                    fprintf(fpout,"f");
+                    i+=3;
+                }else
+                    fprintf(fpout,"%c",car[i]);
+            }	
+            
+            fclose(fp);
+            fclose(fpout);
+            
+            return 0;
+        }
+        
 </pre></div>
 <a href="ESERCIZI_C/009.c" download class="downloadbtn"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
 </body>
